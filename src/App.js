@@ -40,6 +40,7 @@ const App = () => {
               setIsVideoLoaded={setIsVideoLoaded}
               isVideoLoaded={isVideoLoaded}
               setVideoDurtion={setVideoDuration}
+              setCaptions={setCaptions}
             />
             <CaptionInput
               onAddCaption={handleAddCaption}

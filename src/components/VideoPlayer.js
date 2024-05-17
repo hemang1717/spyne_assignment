@@ -6,6 +6,7 @@ const VideoPlayer = ({
   setIsVideoLoaded,
   isVideoLoaded = "",
   setVideoDurtion,
+  setCaptions
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentCaption, setCurrentCaption] = useState("");
@@ -28,16 +29,18 @@ const VideoPlayer = ({
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [isPlaying, captions]);
+  }, [isPlaying]);
 
   const handleVideoLoaded = () => {
     setIsVideoLoaded(true);
     setVideoDurtion(videoRef.current.duration);
+    setCaptions([]);
   };
 
   const handleVideoError = () => {
     setIsVideoLoaded(false);
     setVideoDurtion("");
+    setCaptions([])
   };
 
   const handlePlayVideo = () => {
